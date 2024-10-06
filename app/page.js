@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="container mx-auto p-4">
       {/* Alert */}
-      <Alert color="info">Welcome to Foodalist, explore the best food options around!</Alert>
+      <Alert color="info">Welcome to Foodalist, 33333 explore the best food options around!</Alert>
 
       {/* Navbar */}
       <Navbar fluid rounded>
