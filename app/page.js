@@ -1,101 +1,89 @@
-import Image from "next/image";
+"use client";
+
+import { Navbar, Footer, Card } from "flowbite-react";
+import { Alert, Button } from "flowbite-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="container mx-auto p-4">
+      {/* Alert */}
+      <Alert color="info">Welcome to Foodalist, explore the best food options around!</Alert>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Navbar */}
+      <Navbar fluid rounded>
+        <Navbar.Brand href="https://flowbite.com/">
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            className="mr-3 h-6 sm:h-9"
+            alt="Flowbite Logo"
+          />
+          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            Foodalist
+          </span>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Navbar.Link href="/" active>
+            Home
+          </Navbar.Link>
+          <Navbar.Link href="/about">About Us</Navbar.Link>
+          <Navbar.Link href="/services">Services</Navbar.Link>
+          <Navbar.Link href="/contact">Contact</Navbar.Link>
+        </Navbar.Collapse>
+      </Navbar>
+
+      {/* Hero Section */}
+      <div className="bg-gray-100 text-center py-16">
+        <h1 className="text-4xl font-bold mb-4">Welcome to Foodalist</h1>
+        <p className="mb-6 text-lg">Discover the best food options near you!</p>
+        <Button size="lg" color="purple">Get Started</Button>
+      </div>
+
+      {/* Services Section */}
+      <div className="py-16">
+        <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card imgSrc="https://via.placeholder.com/150" className="text-center">
+            <h5 className="text-2xl font-bold">Food Delivery</h5>
+            <p>We deliver the best food to your doorstep!</p>
+          </Card>
+          <Card imgSrc="https://via.placeholder.com/150" className="text-center">
+            <h5 className="text-2xl font-bold">Healthy Recipes</h5>
+            <p>Explore hundreds of healthy and delicious recipes!</p>
+          </Card>
+          <Card imgSrc="https://via.placeholder.com/150" className="text-center">
+            <h5 className="text-2xl font-bold">Meal Planning</h5>
+            <p>Plan your meals for the week with expert advice!</p>
+          </Card>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="bg-gray-100 py-16">
+        <h2 className="text-3xl font-bold text-center mb-8">What Our Users Say</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card className="text-center">
+            <p>"Foodalist helped me discover amazing local food!"</p>
+            <h5 className="mt-4 font-bold">- John Doe</h5>
+          </Card>
+          <Card className="text-center">
+            <p>"The meal planning tool is a lifesaver for my family!"</p>
+            <h5 className="mt-4 font-bold">- Jane Smith</h5>
+          </Card>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <Footer container>
+        <div className="w-full text-center">
+          <Footer.Copyright href="#" by="Foodalist™" year={2024} />
+          <Footer.LinkGroup>
+            <Footer.Link href="#">Privacy Policy</Footer.Link>
+            <Footer.Link href="#">Terms of Service</Footer.Link>
+            <Footer.Link href="#">Contact</Footer.Link>
+          </Footer.LinkGroup>
+        </div>
+      </Footer>
     </div>
   );
 }

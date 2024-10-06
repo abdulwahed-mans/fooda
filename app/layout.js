@@ -1,6 +1,10 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
+import 'flowbite/dist/flowbite.min.css';
+
+
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
